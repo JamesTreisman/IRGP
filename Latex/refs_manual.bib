@@ -1,0 +1,60 @@
+% SEE THIS FOR INPUT FIELDS/SYNTAX
+% https://linorg.usp.br/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
+% https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+
+% FOR IMPORT FROM WORD:
+% https://citation-finder.vercel.app/
+% copy paste from a word references section, export to bibtex, then paste into here. Use chatgpt to format them nicely, this prompt works well: 'format these nicely with new lines for each field and a blank space between each entry, give me the bibtex code'
+
+%%%%%%%%%%%%% common use cases:
+% if you need something other than these, either check in refs_mendeley.bib for something similar or check in the documentation (first link)
+@article{author_year_title1,
+  author       = "Author Name",
+  title        = "Title of the Article",
+  journal      = "Journal Name",
+  year         = "Year",
+  volume       = "Volume Number",
+  number       = "Issue Number",
+  pages        = "Page Range",
+  doi          = "DOI Number",
+  url          = "URL",
+}
+
+@book{author_year_title2,
+  author       = "Author Name",
+  title        = "Title of the Book",
+  publisher    = "Publisher Name",
+  year         = "Year",
+  isbn         = "ISBN",
+}
+
+@inproceedings{author_year_title3,
+  author       = "Author Name",
+  title        = "Title of the Proceedings",
+  booktitle    = "Title of the Conference",
+  year         = "Year",
+  pages        = "Page Range",
+  organization = "Organizer",
+}
+
+@online{author_year_title4,
+  author       = "Author Name",
+  title        = "Site title",
+  year         = "Year",
+  url          = "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+}
+
+%%%%%%%%%%%%% actual references
+
+@article{Chicken,
+    author = "Chicken",
+    title = "Chicken Chicken. ({Chicken})
+    [Chicken chicken chicken chicken chicken]",
+    journal = "Chicken der Chicken",
+    volume = "Chick",
+    number = "en",
+    pages = "Chic--ken",
+    year = "Chicken",
+    DOI = "http://dx.doi.org/chicken",
+    keywords = "beef"
+}

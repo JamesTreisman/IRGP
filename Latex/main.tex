@@ -1,0 +1,26 @@
+% !TEX root = main.tex
+\documentclass[11pt,twoside]{article} % is a report yes
+\usepackage[T1]{fontenc} % allows more characters (accents etc)
+\usepackage[utf8]{inputenc} % no clue
+
+\newcommand{\textauthor}{James Treisman} % yes is me
+\newcommand{\textheadtitle}{HEADTITLE} % yes is title
+
+\input{parts/setup} % packages + formatting
+
+\begin{document}
+\input{parts/title_page.tex}
+\newpage
+\tableofcontents
+\newpage
+
+\section*{References}
+\setlength\bibitemsep{0.5\itemsep}
+% \begingroup
+% \tiny % Change the font size here
+% \begin{multicols}{2}
+\printbibliography[heading=none]
+% \end{multicols}
+% \endgroup
+
+\end{document}

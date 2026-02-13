@@ -1,0 +1,183 @@
+\usepackage{graphicx} % for images
+\usepackage{float} % for positioning
+\usepackage[font=small]{caption} % for multiple figures
+\usepackage{subcaption} % ''
+% \usepackage{afterpage} % for full page figures
+\usepackage{tabularx} % for tables
+\usepackage{listings} % For code listings
+% \usepackage{framed}
+\usepackage{geometry} % for page layout
+\usepackage{amsmath} % for more equation settings
+\usepackage{amssymb} % for symbols
+\usepackage{mathtools} % for more equation settings
+\usepackage[thinc]{esdiff} % for derivatives
+\usepackage{siunitx} % for scientific form https://mirror.apps.cam.ac.uk/pub/tex-archive/macros/latex/contrib/siunitx/siunitx.pdf
+% \usepackage{textcomp, gensymb} % for symbols (degrees) + remove warning messages
+\usepackage{titlesec} % for formatting
+% \usepackage{tocloft} % for table of contents
+% \usepackage{parskip} % removes indents from paragraph
+\usepackage{multirow} % for tables
+\usepackage{multicol} % guess what also for tables bam
+\usepackage{paracol} % for parallel columns
+\usepackage{booktabs} % for tables
+\usepackage{makecell} % for line breaks in tables
+\usepackage{balance} % for balancing columns
+\usepackage[sorting=none,style=numeric-comp,url=false,doi=false,isbn=false,eprint=false]{biblatex} % for referencing
+% \usepackage{changepage} % for section indenting
+\usepackage{enumitem} % for numbered lists
+\usepackage{fancyhdr} % for headers/footers
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % all references become blue hyperlinks
+\usepackage{hyperref} % all references become hyperlinks
+\usepackage[table]{xcolor} % for colouring table cells
+\usepackage{datetime} % for title page date
+% \usepackage{lineno} % line numbers
+
+% unused doc stuff for working
+% % \linenumbers 
+% \pagecolor[rgb]{0.1,0.1,0.1} %black % DARK MODE
+% \color[rgb]{0.5,0.5,0.5} %grey
+% \definecolor{bg_color}{RGB}{24, 24, 24} % Background color
+% \definecolor{text_color}{RGB}{255, 255, 255} % Text color
+% \definecolor{link_color}{RGB}{102, 204, 255} % Hyperlink color
+
+% doc setup
+\addbibresource{refs.bib}
+\addbibresource{refs_manual.bib}
+\graphicspath{{./images/}}
+\lstset{
+    basicstyle=\ttfamily\footnotesize,  % Use monospace font, smaller size
+    keywordstyle=\color{blue}\bfseries, % Keywords in bold blue
+    commentstyle=\color{gray},         % Comments in gray
+    stringstyle=\color{red},           % Strings in red
+    numbers=left,                      % Line numbers on the left
+    numberstyle=\tiny\color{gray},     % Line number style
+    stepnumber=1,                      % Number every line
+    frame=single,                      % Add a box around the code
+    tabsize=4,                         % Set tab width to 4 spaces
+    breaklines=true,                   % Enable line breaking
+    captionpos=b,                      % Caption below the listing
+    backgroundcolor=\color[RGB]{240, 240, 235}
+}
+
+% page appearance/geometry
+\geometry{a4paper,left=20mm,right=20mm,bottom=20mm,top=20mm}
+\geometry{headsep=.1in}
+% set headers/footers
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+
+% section formatting
+\let\endtitlepage\relax % remove page break after title page
+% \titleclass{\chapter}{straight} % remove new page for chapter
+\renewcommand{\contentsname}{\centering \Large \bfseries C\MakeLowercase{ontents}} % bold, centred, normal case table of contents
+\setcounter{tocdepth}{3} % set table of contents depth
+\setcounter{secnumdepth}{3} % set section numbering depth (paragraph=4)
+% \numberwithin{equation}{section} % change numbering scheme (of any environment)
+% \renewcommand{\thesection}{Q\arabic{section}} % change section numbering to questions
+\allowdisplaybreaks
+% \sisetup{mode = text}
+
+% section title formatting/spacing
+% title formatting (https://ctex.org/documents/packages/layout/titlesec.pdf)
+% \titleformat{\chapter}[frame]
+% {\Large\sc\bfseries}{\thechapter}{3pt}{\LARGE\bfseries\filcenter}
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{1.8em}{\MakeUppercase}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+% \titlespacing*{\chapter} {0pt}{0pt}{10pt}
+% \titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\section} {0pt}{1ex plus 1ex minus .2ex}{0.5ex plus .2ex}
+% \titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection} {0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+% \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+\titlespacing*{\paragraph} {0pt}{0pt}{1em}
+\titlespacing*{\subparagraph} {\parindent}{0ex plus 0ex minus 0ex}{1em}
+
+% headers/footers
+\pagestyle{fancy}
+\setlength{\headheight}{13.59999pt}
+\fancyhead[R]{\textauthor}
+\fancyhead[L]{\textheadtitle}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{University of Bath}
+\fancyfoot[R]{Department of Mathematical Sciences}
+\fancypagestyle{titlepage}{
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{University of Bath}
+\fancyfoot[R]{Department of Mathematical Sciences}
+}
+\fancypagestyle{plain}{%
+\fancyhead[R]{\textauthor}
+\fancyhead[L]{\textheadtitle}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{University of Bath}
+\fancyfoot[R]{Department of Mathematical Sciences}
+  \renewcommand{\headrulewidth}{2pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{2pt}% Line at the footer visible
+}
+% date format
+\newdateformat{monthdayyeardate}{\monthname[\THEMONTH]~\THEDAY, \THEYEAR}
+
+%%% SQUISHING
+% font size
+\usepackage[scaled=1]{helvet}
+\fontfamily{phv}\selectfont
+\renewcommand\familydefault{\sfdefault}
+% \usepackage[scaled=0.9]{times}
+% \fontfamily{lmr}\selectfont
+% \renewcommand\familydefault{\rmdefault}
+% \renewcommand{\baselinestretch}{0.975} % change all spacing
+% caption size
+% \captionsetup{font=small}
+% \captionsetup[subfigure]{font=footnotesize}
+% % bibliography font size
+\renewcommand*{\bibfont}{\small}
+% % caption skips
+% \setlength{\abovecaptionskip}{7pt} %10pt
+% \setlength{\belowcaptionskip}{-7pt} %0pt
+% equation spacing
+% \expandafter\def\expandafter\normalsize\expandafter{%
+%     \normalsize%
+%     \setlength\abovedisplayskip{0pt}%
+%     \setlength\belowdisplayskip{8pt}%
+%     \setlength\abovedisplayshortskip{-4pt}%
+%     \setlength\belowdisplayshortskip{8pt}%
+% }
+% equation sizes
+% \DeclareMathSizes{11}{19}{13}{9}  (default) 
+% \DeclareMathSizes{10.45}{18.05}{12.35}{8.55}   
+% \DeclareMathSizes{9.9000}{17.1000}{11.7000}{8.1000}
+% % ignores links in bib and turn into hyperlinks
+% \newbibmacro{string+doiurl}[1]{%
+%   \iffieldundef{doi}
+%     {\iffieldundef{url}
+%        {#1}
+%        {\href{\thefield{url}}{#1}}}
+%     {\href{https://doi.org/\thefield{doi}}{#1}}}
+% \makeatletter
+% \def\blx@driver#1{%
+%   \ifcsdef{blx@bbx@#1}
+%     {\usebibmacro{string+doiurl}{\csuse{blx@bbx@#1}}}
+%     {\ifcsdef{blx@bbx@*}
+%        {\blx@warning{%
+%           No driver for entry type '#1'.\MessageBreak
+%           Using fallback driver}%
+%         \usebibmacro{string+doiurl}{\csuse{blx@bbx@*}}}
+%        {\blx@error
+%           {No driver found}
+%           {I can't find a driver for the entry type
+%            '\abx@field@entrytype'\MessageBreak
+%            and there is no fallback driver either}}}}
+% \makeatother
